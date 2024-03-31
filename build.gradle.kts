@@ -76,10 +76,10 @@ kotlin {
         }
     }
 
-    androidNativeArm32()
-    androidNativeArm64()
-    androidNativeX64()
-    androidNativeX86()
+//    androidNativeArm32()
+//    androidNativeArm64()
+//    androidNativeX64()
+//    androidNativeX86()
 
     linuxArm64()
     linuxX64()

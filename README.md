@@ -10,21 +10,39 @@ A Kotlin Multiplatform library for working with the unofficial [Drop Research Fa
 (DRF) API.
 
 The library is fully written in common Kotlin code. Prebuilt binaries are
-available for JVM (Java 11 or later), JS, Wasm, and all native targets.[^1]
+available for JVM (Java 11 or later), JS, Wasm, and several native targets.[^1]
 
-[^1]: Since this library does not rely on any platform-specific APIs, we aim to
-provide prebuilt libraries for all native targets supported by Kotlin.
-Despite that, some targets may be missing as target support may change
+[^1]: We aim to provide prebuilt libraries for all native targets supported by
+Ktor. Despite that, some targets may be missing as target support may change
 over time. In case something is missing, please make sure to let us know.
 
 > [!WARNING]
-> This library is not officially supported by Drop Research Facilities and uses
-> internal APIs that may break or stop working at any time.
+> This library uses internal APIs that are not officially supported by the DRF
+> developers and may break at any time.
 
 
 ## Usage
 
 !TODO
+
+
+## Supported platforms
+
+The following [targets](https://kotlinlang.org/docs/multiplatform-dsl-reference.html#targets) are supported by this
+library:
+
+| Target platform                          | Target preset                                                         |
+|------------------------------------------|-----------------------------------------------------------------------|
+| Kotlin/JVM (can also be used on Android) | `jvm`                                                                 |
+| Kotlin/JS                                | `js`                                                                  |
+| Kotlin/JS                                | `jvm`                                                                 |
+| iOS                                      | `iosArm64`, `iosX64`, `iosSimulatorArm64`                             |
+| watchOS                                  | `watchosArm32`, `watchosArm64`, `watchosX64`, `watchosSimulatorArm64` |
+| tvOS                                     | `tvosArm64`, `tvosX64`, `tvosSimulatorArm64`                          |
+| macOS                                    | `macosArm64`, `macosX64`                                              |
+| Linux                                    | `macosArm64`, `macosX64`                                              |
+| Windows                                  | `linuxArm64`, `linuxX64`                                              |
+| Windows                                  | `mingwX64`                                                            |
 
 
 ## Building from source
