@@ -30,9 +30,10 @@ import io.ktor.serialization.*
 import io.ktor.serialization.kotlinx.*
 import io.ktor.utils.io.core.*
 import io.ktor.websocket.*
-import kotlinx.coroutines.channels.ClosedReceiveChannelException
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.flow.*
 import kotlinx.serialization.json.Json
+import kotlin.jvm.JvmOverloads
 
 /**
  * An API client acts as entry-point to make requests against the DRF API.
@@ -40,15 +41,26 @@ import kotlinx.serialization.json.Json
  * @since   0.1.0
  */
 public class DrfApiClient private constructor(
+    private val host: String,
     private val httpClient: HttpClient
 ) : Closeable by httpClient {
+
+    private companion object {
+        const val DEFAULT_HOST: String = "drf.rs"
+    }
 
     /**
      * Creates a new [DrfApiClient].
      *
+     * @param host  the host URL fragment of the API
+     *
      * @since   0.1.0
      */
-    public constructor(): this(
+    @JvmOverloads
+    public constructor(
+        host: String = DEFAULT_HOST
+    ): this(
+        host = host,
         httpClient = HttpClient {
             install(WebSockets) {
                 contentConverter = KotlinxWebsocketSerializationConverter(Json)
@@ -59,9 +71,16 @@ public class DrfApiClient private constructor(
     /**
      * Creates a new [DrfApiClient] with the given [engine].
      *
+     * @param host  the host URL fragment of the API
+     *
      * @since   0.1.0
      */
-    public constructor(engine: HttpClientEngine): this(
+    @JvmOverloads
+    public constructor(
+        engine: HttpClientEngine,
+        host: String = DEFAULT_HOST
+    ): this(
+        host = host,
         httpClient = HttpClient(engine) {
             install(WebSockets) {
                 contentConverter = KotlinxWebsocketSerializationConverter(Json {
@@ -72,32 +91,32 @@ public class DrfApiClient private constructor(
     )
 
     /**
-     * Subscribes to a [Flow] of messages.
-     *
-     * This method opens a websocket connection to retrieve a continuous flow of live drop messages from the DRF API.
-     * The websocket connection is closed when the flow is completed (either "normally" by using a terminal operator or
-     * exceptionally).
+     * Returns a cold [Flow] that emits [messages][DrfMessage] for live updates from DRF.
      *
      * @param apiKey    the DRF API key used to subscribe to a message flow
      *
-     * @throws SocketClosedException    if the websocket is closed by the remote
-     *
      * @since   0.1.0
      */
-    public suspend fun subscribe(apiKey: String): Flow<DrfMessage> {
-        val webSocketSession = httpClient.webSocketSession("wss://drf.rs/ws")
-        webSocketSession.send(Frame.Text("Bearer $apiKey"))
+    public fun subscribe(apiKey: String): Flow<DrfMessage> = flow {
+        val webSocketSession = httpClient.webSocketSession(host = host, path = "/ws")
 
-        return webSocketSession.incoming.consumeAsFlow()
-            .onCompletion { webSocketSession.close() }
-            .map { frame -> webSocketSession.converter!!.deserialize<DrfMessage>(frame) }
-            .catch { e -> when {
-                e is ClosedReceiveChannelException -> {
-                    val closeReason = webSocketSession.closeReason.await()
-                    throw SocketClosedException(closeReason, e)
-                }
-                else -> throw e
-            }}
+        try {
+            webSocketSession.send(Frame.Text("Bearer $apiKey"))
+
+            webSocketSession.incoming.receiveAsFlow()
+                .map { frame -> webSocketSession.converter!!.deserialize<DrfMessage>(frame) }
+                .onEach(::emit)
+                .collect()
+
+            val closeReason = webSocketSession.closeReason.await()
+            if (closeReason?.code != CloseReason.Codes.NORMAL.code) {
+                throw SocketClosedException(closeReason, null)
+            }
+        } catch (e: CancellationException) {
+            throw SocketClosedException(webSocketSession.closeReason.await(), e.cause)
+        } finally {
+            webSocketSession.close()
+        }
     }
 
 }

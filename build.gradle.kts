@@ -125,6 +125,9 @@ kotlin {
                 implementation(kotlin("test"))
                 implementation(libs.kotlinx.coroutines.test)
                 implementation(libs.ktor.client.mock)
+                implementation(libs.ktor.server.test.host)
+                implementation(libs.ktor.server.websockets)
+                implementation(libs.turbine)
             }
         }
     }
