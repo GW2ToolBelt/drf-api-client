@@ -70,7 +70,7 @@ public data class DataMessage(
 private object DefaultDataMessageSerializer : KSerializer<DataMessage> {
 
     // Workaround for https://github.com/Kotlin/kotlinx.serialization/issues/2549
-    override val descriptor: SerialDescriptor = buildClassSerialDescriptor(DataMessage::class.qualifiedName!!) {
+    override val descriptor: SerialDescriptor = buildClassSerialDescriptor("com.gw2tb.drf.api.model.DataMessage") {
         element("character", serialDescriptor<String>())
         element("drop", DataMessage.Drop.serializer().descriptor)
     }

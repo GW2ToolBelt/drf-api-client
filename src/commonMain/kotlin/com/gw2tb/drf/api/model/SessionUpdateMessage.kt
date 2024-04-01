@@ -53,7 +53,7 @@ public data class SessionUpdateMessage(
 private object DefaultSessionUpdateMessageSerializer : KSerializer<SessionUpdateMessage> {
 
     // Workaround for https://github.com/Kotlin/kotlinx.serialization/issues/2549
-    override val descriptor: SerialDescriptor = buildClassSerialDescriptor(SessionUpdateMessage::class.qualifiedName!!) {
+    override val descriptor: SerialDescriptor = buildClassSerialDescriptor("com.gw2tb.drf.api.model.SessionUpdateMessage") {
         element("character", serialDescriptor<String>())
         element("level", serialDescriptor<Int>())
         element("map", serialDescriptor<Int>())
