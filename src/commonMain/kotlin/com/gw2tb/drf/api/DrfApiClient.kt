@@ -91,7 +91,7 @@ public class DrfApiClient private constructor(
     )
 
     /**
-     * Returns a cold [Flow] that emits [messages][DrfMessage] for live updates from DRF.
+     * Returns a "cold" [Flow] that emits [messages][DrfMessage] for live updates from DRF.
      *
      * @param apiKey    the DRF API key used to subscribe to a message flow
      *
