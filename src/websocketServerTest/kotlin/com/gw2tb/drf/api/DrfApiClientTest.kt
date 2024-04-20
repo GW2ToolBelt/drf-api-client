@@ -50,8 +50,6 @@ class DrfApiClientTest {
             routing {
                 webSocket("/ws") {
                     closeReason = this.closeReason
-                    println("foobar")
-
                     assertEquals("Bearer <some-secret-token>", (incoming.receive() as Frame.Text).readText())
 
                     send(Frame.Text("""{"kind":"session_update","payload":{"character":"John Doe","level":42,"map":1517,"start":"2024-03-28T20:27:20.496005890Z","end":null}}"""))
