@@ -125,10 +125,29 @@ kotlin {
                 implementation(kotlin("test"))
                 implementation(libs.kotlinx.coroutines.test)
                 implementation(libs.ktor.client.mock)
-                implementation(libs.ktor.server.test.host)
-                implementation(libs.ktor.server.websockets)
                 implementation(libs.turbine)
             }
+        }
+
+        val websocketServerTest by creating {
+            dependsOn(commonTest.get())
+
+            dependencies {
+                implementation(libs.ktor.server.test.host)
+                implementation(libs.ktor.server.websockets)
+            }
+        }
+
+        named("appleTest") {
+            dependsOn(websocketServerTest)
+        }
+
+        named("linuxTest") {
+            dependsOn(websocketServerTest)
+        }
+
+        named("jvmTest") {
+            dependsOn(websocketServerTest)
         }
     }
 
