@@ -1,0 +1,103 @@
+public final class com/gw2tb/drf/api/DrfApiClient : java/io/Closeable {
+	public static final field DEFAULT_HOST Ljava/lang/String;
+	public fun <init> ()V
+	public fun <init> (Lio/ktor/client/engine/HttpClientEngine;)V
+	public fun <init> (Lio/ktor/client/engine/HttpClientEngine;Ljava/lang/String;)V
+	public synthetic fun <init> (Lio/ktor/client/engine/HttpClientEngine;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun <init> (Ljava/lang/String;)V
+	public synthetic fun <init> (Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun close ()V
+	public final fun subscribe (Ljava/lang/String;)Lkotlinx/coroutines/flow/Flow;
+}
+
+public final class com/gw2tb/drf/api/exceptions/SocketClosedException : java/lang/Exception {
+	public final fun getCloseReason ()Lio/ktor/websocket/CloseReason;
+}
+
+public final class com/gw2tb/drf/api/model/DataMessage : com/gw2tb/drf/api/model/DrfMessage {
+	public static final field Companion Lcom/gw2tb/drf/api/model/DataMessage$Companion;
+	public fun <init> (Ljava/lang/String;Lcom/gw2tb/drf/api/model/DataMessage$Drop;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Lcom/gw2tb/drf/api/model/DataMessage$Drop;
+	public final fun copy (Ljava/lang/String;Lcom/gw2tb/drf/api/model/DataMessage$Drop;)Lcom/gw2tb/drf/api/model/DataMessage;
+	public static synthetic fun copy$default (Lcom/gw2tb/drf/api/model/DataMessage;Ljava/lang/String;Lcom/gw2tb/drf/api/model/DataMessage$Drop;ILjava/lang/Object;)Lcom/gw2tb/drf/api/model/DataMessage;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getCharacter ()Ljava/lang/String;
+	public final fun getDrop ()Lcom/gw2tb/drf/api/model/DataMessage$Drop;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/gw2tb/drf/api/model/DataMessage$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class com/gw2tb/drf/api/model/DataMessage$Drop {
+	public static final field Companion Lcom/gw2tb/drf/api/model/DataMessage$Drop$Companion;
+	public fun <init> (Ljava/util/Map;Ljava/util/Map;ILjava/lang/String;)V
+	public final fun component1 ()Ljava/util/Map;
+	public final fun component2 ()Ljava/util/Map;
+	public final fun component3 ()I
+	public final fun component4 ()Ljava/lang/String;
+	public final fun copy (Ljava/util/Map;Ljava/util/Map;ILjava/lang/String;)Lcom/gw2tb/drf/api/model/DataMessage$Drop;
+	public static synthetic fun copy$default (Lcom/gw2tb/drf/api/model/DataMessage$Drop;Ljava/util/Map;Ljava/util/Map;ILjava/lang/String;ILjava/lang/Object;)Lcom/gw2tb/drf/api/model/DataMessage$Drop;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getCurrencies ()Ljava/util/Map;
+	public final fun getItems ()Ljava/util/Map;
+	public final fun getMagicFind ()I
+	public final fun getTimestamp ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/gw2tb/drf/api/model/DataMessage$Drop$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Lcom/gw2tb/drf/api/model/DataMessage$Drop$$serializer;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcom/gw2tb/drf/api/model/DataMessage$Drop;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Lcom/gw2tb/drf/api/model/DataMessage$Drop;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class com/gw2tb/drf/api/model/DataMessage$Drop$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public abstract interface class com/gw2tb/drf/api/model/DrfMessage {
+	public static final field Companion Lcom/gw2tb/drf/api/model/DrfMessage$Companion;
+}
+
+public final class com/gw2tb/drf/api/model/DrfMessage$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class com/gw2tb/drf/api/model/DrfMessageSerializer : kotlinx/serialization/json/JsonContentPolymorphicSerializer {
+	public static final field INSTANCE Lcom/gw2tb/drf/api/model/DrfMessageSerializer;
+}
+
+public final class com/gw2tb/drf/api/model/SessionUpdateMessage : com/gw2tb/drf/api/model/DrfMessage {
+	public static final field Companion Lcom/gw2tb/drf/api/model/SessionUpdateMessage$Companion;
+	public fun <init> (Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()I
+	public final fun component3 ()I
+	public final fun component4 ()Ljava/lang/String;
+	public final fun component5 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Lcom/gw2tb/drf/api/model/SessionUpdateMessage;
+	public static synthetic fun copy$default (Lcom/gw2tb/drf/api/model/SessionUpdateMessage;Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lcom/gw2tb/drf/api/model/SessionUpdateMessage;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getCharacter ()Ljava/lang/String;
+	public final fun getEnd ()Ljava/lang/String;
+	public final fun getLevel ()I
+	public final fun getMap ()I
+	public final fun getStart ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/gw2tb/drf/api/model/SessionUpdateMessage$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
