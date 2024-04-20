@@ -2,7 +2,6 @@
 binary-compatibility-validator = "0.14.0"
 dokka = "1.9.20"
 dokkatoo = "2.3.1"
-gradle-toolchain-switches = "0.3.0"
 junit = "5.10.2"
 kotlin = "1.9.23"
 kotlinx-coroutines = "1.8.0"
@@ -48,10 +47,6 @@ kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serializa
 # https://github.com/adamko-dev/dokkatoo
 dokkatoo-html = { id = "dev.adamko.dokkatoo-html", version.ref = "dokkatoo" }
 dokkatoo-javadoc = { id = "dev.adamko.dokkatoo-javadoc", version.ref = "dokkatoo" }
-
-# io.github.themrmilchmann.gradle.toolchainswitches:gradle-toolchain-switches - Gradle Toolchain Switches Plugin
-# https://github.com/TheMrMilchmann/gradle-toolchain-switches
-gradle-toolchain-switches = { id = "io.github.themrmilchmann.toolchain-switches", version.ref = "gradle-toolchain-switches" }
 
 # org.jetbrains.kotlinx.binary-compatibility-validator - binary-compatibility-validator
 # https://github.com/Kotlin/binary-compatibility-validator
