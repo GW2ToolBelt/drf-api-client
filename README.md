@@ -62,13 +62,11 @@ library:
 |------------------------------------------|-----------------------------------------------------------------------|
 | Kotlin/JVM (can also be used on Android) | `jvm`                                                                 |
 | Kotlin/JS                                | `js`                                                                  |
-| Kotlin/JS                                | `jvm`                                                                 |
 | iOS                                      | `iosArm64`, `iosX64`, `iosSimulatorArm64`                             |
 | watchOS                                  | `watchosArm32`, `watchosArm64`, `watchosX64`, `watchosSimulatorArm64` |
 | tvOS                                     | `tvosArm64`, `tvosX64`, `tvosSimulatorArm64`                          |
 | macOS                                    | `macosArm64`, `macosX64`                                              |
-| Linux                                    | `macosArm64`, `macosX64`                                              |
-| Windows                                  | `linuxArm64`, `linuxX64`                                              |
+| Linux                                    | `linuxArm64`, `linuxX64`                                              |
 | Windows                                  | `mingwX64`                                                            |
 
 
