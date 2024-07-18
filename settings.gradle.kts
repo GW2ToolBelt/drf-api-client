@@ -33,4 +33,12 @@ plugins {
 
 rootProject.name = "drf-api-client"
 
+dependencyResolutionManagement {
+    versionCatalogs {
+        create("buildDeps") {
+            from(files("./gradle/build.versions.toml"))
+        }
+    }
+}
+
 enableFeaturePreview("STABLE_CONFIGURATION_CACHE")

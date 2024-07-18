@@ -30,11 +30,11 @@ import org.jetbrains.kotlin.gradle.targets.jvm.*
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    alias(libs.plugins.binary.compatibility.validator)
-    alias(libs.plugins.dokkatoo.html)
-//    alias(libs.plugins.dokkatoo.javadoc)
-    alias(libs.plugins.kotlin.multiplatform)
-    alias(libs.plugins.kotlin.plugin.serialization)
+    alias(buildDeps.plugins.binary.compatibility.validator)
+    alias(buildDeps.plugins.dokkatoo.html)
+//    alias(buildDeps.plugins.dokkatoo.javadoc)
+    alias(buildDeps.plugins.kotlin.multiplatform)
+    alias(buildDeps.plugins.kotlin.plugin.serialization)
     id("com.gw2tb.maven-publish-conventions")
 }
 
@@ -125,7 +125,7 @@ kotlin {
                 implementation(kotlin("test"))
                 implementation(libs.kotlinx.coroutines.test)
                 implementation(libs.ktor.client.mock)
-                implementation(libs.turbine)
+                implementation(buildDeps.turbine)
             }
         }
 
@@ -195,7 +195,7 @@ dokkatoo {
     }
 
     versions {
-        jetbrainsDokka = libs.versions.dokka
+        jetbrainsDokka = buildDeps.versions.dokka
     }
 }
 
