@@ -24,7 +24,6 @@ import groovy.util.NodeList
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 import org.jetbrains.kotlin.gradle.plugin.mpp.*
-import org.jetbrains.kotlin.gradle.targets.js.npm.tasks.KotlinNpmInstallTask
 import org.jetbrains.kotlin.gradle.targets.js.yarn.*
 import org.jetbrains.kotlin.gradle.targets.jvm.*
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
@@ -225,10 +224,6 @@ tasks {
         isReproducibleFileOrder = true
 
         includeEmptyDirs = false
-    }
-
-    withType<KotlinNpmInstallTask>().configureEach {
-        args += "--ignore-engines"
     }
 
     dokkatooGeneratePublicationHtml {
