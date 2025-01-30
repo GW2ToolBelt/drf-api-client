@@ -3,7 +3,7 @@
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=for-the-badge&label=License)](https://github.com/GW2Toolbelt/drf-api-client/blob/master/LICENSE)
 [![Maven Central](https://img.shields.io/maven-central/v/com.gw2tb.drf/drf-api-client.svg?style=for-the-badge&label=Maven%20Central)](https://maven-badges.herokuapp.com/maven-central/com.gw2tb.drf/drf-api-client)
 [![Documentation](https://img.shields.io/maven-central/v/com.gw2tb.drf/drf-api-client.svg?style=for-the-badge&label=Documentation&color=blue)](https://gw2toolbelt.github.io/drf-api-client/)
-![Kotlin](https://img.shields.io/badge/Kotlin-1%2E9-green.svg?style=for-the-badge&color=a97bff&logo=Kotlin)
+![Kotlin](https://img.shields.io/badge/Kotlin-2%2E1-green.svg?style=for-the-badge&color=a97bff&logo=Kotlin)
 ![Java](https://img.shields.io/badge/Java-11-green.svg?style=for-the-badge&color=b07219&logo=Java)
 
 A Kotlin Multiplatform library for working with the unofficial [Drop Research Facilities](https://drf.rs)
