@@ -31,8 +31,8 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     alias(buildDeps.plugins.binary.compatibility.validator)
-    alias(buildDeps.plugins.dokkatoo.html)
-//    alias(buildDeps.plugins.dokkatoo.javadoc)
+    alias(buildDeps.plugins.dokka)
+//    alias(buildDeps.plugins.dokka.javadoc)
     alias(buildDeps.plugins.kotlin.multiplatform)
     alias(buildDeps.plugins.kotlin.plugin.serialization)
     id("com.gw2tb.maven-publish-conventions")
@@ -162,12 +162,12 @@ kotlin {
     }
 }
 
-dokkatoo {
+dokka {
     dokkaGeneratorIsolation = ProcessIsolation {
         maxHeapSize = "4G"
     }
 
-    dokkatooSourceSets.configureEach {
+    dokkaSourceSets.configureEach sourceSet@{
         reportUndocumented = true
         skipEmptyPackages = true
         jdkVersion = 11
@@ -178,20 +178,16 @@ dokkatoo {
         sourceLink {
             localDirectory = localKotlinSourceDir
 
-            remoteUrl("https://github.com/GW2ToolBelt/drf-api-client/tree/v${version}/src/main/kotlin")
+            remoteUrl("https://github.com/GW2ToolBelt/drf-api-client/tree/v${version}/src/${this@sourceSet.name}/kotlin")
             remoteLineSuffix = "#L"
         }
     }
 
-    dokkatooPublications.configureEach {
+    dokkaPublications.configureEach {
         moduleName = "drf-api-client"
 
         // TODO Remaining warnings are silly atm. Reevaluate this flag in the future.
 //        failOnWarning = true
-    }
-
-    versions {
-        jetbrainsDokka = buildDeps.versions.dokka
     }
 }
 
@@ -223,7 +219,7 @@ tasks {
         includeEmptyDirs = false
     }
 
-    dokkatooGeneratePublicationHtml {
+    dokkaGeneratePublicationHtml {
         outputDirectory = layout.projectDirectory.dir("docs/site/api")
     }
 
