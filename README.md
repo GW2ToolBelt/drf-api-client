@@ -115,7 +115,7 @@ all responsibility. There is no warranty for using this software.
 #### drf-api-client
 
 ```
-Copyright (c) 2024 Leon Linhart
+Copyright (c) 2024-2025 Leon Linhart
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
