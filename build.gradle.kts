@@ -137,14 +137,6 @@ kotlin {
             }
         }
 
-        named("appleTest") {
-            dependsOn(websocketServerTest)
-        }
-
-        named("linuxTest") {
-            dependsOn(websocketServerTest)
-        }
-
         named("jvmTest") {
             dependsOn(websocketServerTest)
         }
