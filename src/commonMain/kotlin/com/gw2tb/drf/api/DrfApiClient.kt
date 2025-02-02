@@ -26,6 +26,7 @@ import com.gw2tb.drf.api.model.DrfMessage
 import io.ktor.client.*
 import io.ktor.client.engine.*
 import io.ktor.client.plugins.websocket.*
+import io.ktor.http.*
 import io.ktor.serialization.*
 import io.ktor.serialization.kotlinx.*
 import io.ktor.utils.io.core.*
@@ -98,7 +99,13 @@ public class DrfApiClient private constructor(
      * @since   0.1.0
      */
     public fun subscribe(apiKey: String): Flow<DrfMessage> = flow {
-        val webSocketSession = httpClient.webSocketSession(host = host, path = "/ws")
+        val url = buildUrl {
+            this.protocol = URLProtocol.WSS
+            this.host = this@DrfApiClient.host
+            path("/ws")
+        }
+
+        val webSocketSession = httpClient.webSocketSession(url.toString())
 
         try {
             webSocketSession.send(Frame.Text("Bearer $apiKey"))
