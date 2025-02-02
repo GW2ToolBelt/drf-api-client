@@ -21,6 +21,7 @@
  */
 import groovy.util.Node
 import groovy.util.NodeList
+import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 import org.jetbrains.kotlin.gradle.plugin.mpp.*
@@ -92,7 +93,12 @@ kotlin {
 
     tvosSimulatorArm64()
 
-//    wasmJs()
+    @OptIn(ExperimentalWasmDsl::class)
+    wasmJs {
+        browser()
+        nodejs()
+        d8()
+    }
 //    wasmWasi()
 
     watchosArm32()
