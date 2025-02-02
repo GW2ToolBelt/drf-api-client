@@ -24,6 +24,7 @@ package com.gw2tb.drf.api
 import app.cash.turbine.test
 import com.gw2tb.drf.api.exceptions.SocketClosedException
 import com.gw2tb.drf.api.model.SessionUpdateMessage
+import io.ktor.client.*
 import io.ktor.server.application.*
 import io.ktor.server.engine.*
 import io.ktor.server.routing.*
@@ -49,6 +50,8 @@ class DrfApiClientTest {
 
             routing {
                 webSocket("/ws") {
+                    println("foobar")
+
                     closeReason = this.closeReason
                     assertEquals("Bearer <some-secret-token>", (incoming.receive() as Frame.Text).readText())
 
@@ -57,9 +60,10 @@ class DrfApiClientTest {
                 }
             }
         }
+        server.start()
 
         try {
-            val drfClient = DrfApiClient(engine = server.engine)
+            val drfClient = DrfApiClient(server.engine.engine)
             val flow = drfClient.subscribe("<some-secret-token>")
 
             flow.test {
@@ -95,7 +99,7 @@ class DrfApiClientTest {
      }
 
     @Test
-    fun test_AuthException() = runTest {
+    fun test_AuthException() = testApplication {
         // Ktor does not support websockets in MockEngine, so we actually have to spin up a whole application.
         val server = embeddedServer(TestEngine) {
             install(WebSockets)
@@ -111,15 +115,16 @@ class DrfApiClientTest {
                 }
             }
         }
+        server.start()
 
         try {
-            val drfClient = DrfApiClient(engine = server.engine)
+            val drfClient = DrfApiClient(engine = server.engine.engine)
             val flow = drfClient.subscribe("<some-secret-token>")
 
             assertFailsWith<SocketClosedException> { flow.collect() }
         } finally {
             server.stop()
         }
-     }
+    }
 
 }
