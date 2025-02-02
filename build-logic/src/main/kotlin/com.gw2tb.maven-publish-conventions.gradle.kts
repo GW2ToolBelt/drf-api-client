@@ -48,7 +48,6 @@ publishing {
             name = project.name
             description = "A Kotlin Multiplatform library for working with the unofficial Drop Research Facilities (DRF) API."
             url = "https://github.com/GW2ToolBelt/drf-api-client"
-            packaging = "jar"
 
             licenses {
                 license {
