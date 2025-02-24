@@ -1,0 +1,33 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:com.gw2tb.drf.api.exceptions////PointingToDeclaration/drf-api-client/com.gw2tb.drf.api.exceptions/index.html
+$dokka.location:com.gw2tb.drf.api.exceptions/SocketClosedException///PointingToDeclaration/drf-api-client/com.gw2tb.drf.api.exceptions/-socket-closed-exception/index.html
+$dokka.location:com.gw2tb.drf.api.exceptions/SocketClosedException/closeReason/#/PointingToDeclaration/drf-api-client/com.gw2tb.drf.api.exceptions/-socket-closed-exception/close-reason.html
+$dokka.location:com.gw2tb.drf.api.model////PointingToDeclaration/drf-api-client/com.gw2tb.drf.api.model/index.html
+$dokka.location:com.gw2tb.drf.api.model/DataMessage.Drop///PointingToDeclaration/drf-api-client/com.gw2tb.drf.api.model/-data-message/-drop/index.html
+$dokka.location:com.gw2tb.drf.api.model/DataMessage.Drop/Drop/#kotlin.collections.Map[kotlin.Int,kotlin.Int]#kotlin.collections.Map[kotlin.Int,kotlin.Int]#kotlin.Int#kotlin.String/PointingToDeclaration/drf-api-client/com.gw2tb.drf.api.model/-data-message/-drop/-drop.html
+$dokka.location:com.gw2tb.drf.api.model/DataMessage.Drop/currencies/#/PointingToDeclaration/drf-api-client/com.gw2tb.drf.api.model/-data-message/-drop/currencies.html
+$dokka.location:com.gw2tb.drf.api.model/DataMessage.Drop/items/#/PointingToDeclaration/drf-api-client/com.gw2tb.drf.api.model/-data-message/-drop/items.html
+$dokka.location:com.gw2tb.drf.api.model/DataMessage.Drop/magicFind/#/PointingToDeclaration/drf-api-client/com.gw2tb.drf.api.model/-data-message/-drop/magic-find.html
+$dokka.location:com.gw2tb.drf.api.model/DataMessage.Drop/timestamp/#/PointingToDeclaration/drf-api-client/com.gw2tb.drf.api.model/-data-message/-drop/timestamp.html
+$dokka.location:com.gw2tb.drf.api.model/DataMessage///PointingToDeclaration/drf-api-client/com.gw2tb.drf.api.model/-data-message/index.html
+$dokka.location:com.gw2tb.drf.api.model/DataMessage/DataMessage/#kotlin.String#com.gw2tb.drf.api.model.DataMessage.Drop/PointingToDeclaration/drf-api-client/com.gw2tb.drf.api.model/-data-message/-data-message.html
+$dokka.location:com.gw2tb.drf.api.model/DataMessage/character/#/PointingToDeclaration/drf-api-client/com.gw2tb.drf.api.model/-data-message/character.html
+$dokka.location:com.gw2tb.drf.api.model/DataMessage/drop/#/PointingToDeclaration/drf-api-client/com.gw2tb.drf.api.model/-data-message/drop.html
+$dokka.location:com.gw2tb.drf.api.model/DrfMessage///PointingToDeclaration/drf-api-client/com.gw2tb.drf.api.model/-drf-message/index.html
+$dokka.location:com.gw2tb.drf.api.model/DrfMessageSerializer///PointingToDeclaration/drf-api-client/com.gw2tb.drf.api.model/-drf-message-serializer/index.html
+$dokka.location:com.gw2tb.drf.api.model/SessionUpdateMessage///PointingToDeclaration/drf-api-client/com.gw2tb.drf.api.model/-session-update-message/index.html
+$dokka.location:com.gw2tb.drf.api.model/SessionUpdateMessage/SessionUpdateMessage/#kotlin.String#kotlin.Int#kotlin.Int#kotlin.String#kotlin.String?/PointingToDeclaration/drf-api-client/com.gw2tb.drf.api.model/-session-update-message/-session-update-message.html
+$dokka.location:com.gw2tb.drf.api.model/SessionUpdateMessage/character/#/PointingToDeclaration/drf-api-client/com.gw2tb.drf.api.model/-session-update-message/character.html
+$dokka.location:com.gw2tb.drf.api.model/SessionUpdateMessage/end/#/PointingToDeclaration/drf-api-client/com.gw2tb.drf.api.model/-session-update-message/end.html
+$dokka.location:com.gw2tb.drf.api.model/SessionUpdateMessage/level/#/PointingToDeclaration/drf-api-client/com.gw2tb.drf.api.model/-session-update-message/level.html
+$dokka.location:com.gw2tb.drf.api.model/SessionUpdateMessage/map/#/PointingToDeclaration/drf-api-client/com.gw2tb.drf.api.model/-session-update-message/map.html
+$dokka.location:com.gw2tb.drf.api.model/SessionUpdateMessage/start/#/PointingToDeclaration/drf-api-client/com.gw2tb.drf.api.model/-session-update-message/start.html
+$dokka.location:com.gw2tb.drf.api////PointingToDeclaration/drf-api-client/com.gw2tb.drf.api/index.html
+$dokka.location:com.gw2tb.drf.api/DrfApiClient///PointingToDeclaration/drf-api-client/com.gw2tb.drf.api/-drf-api-client/index.html
+$dokka.location:com.gw2tb.drf.api/DrfApiClient/DrfApiClient/#io.ktor.client.engine.HttpClientEngine#kotlin.String/PointingToDeclaration/drf-api-client/com.gw2tb.drf.api/-drf-api-client/-drf-api-client.html
+$dokka.location:com.gw2tb.drf.api/DrfApiClient/DrfApiClient/#kotlin.String/PointingToDeclaration/drf-api-client/com.gw2tb.drf.api/-drf-api-client/-drf-api-client.html
+$dokka.location:com.gw2tb.drf.api/DrfApiClient/subscribe/#kotlin.String/PointingToDeclaration/drf-api-client/com.gw2tb.drf.api/-drf-api-client/subscribe.html
+com.gw2tb.drf.api
+com.gw2tb.drf.api.exceptions
+com.gw2tb.drf.api.model
