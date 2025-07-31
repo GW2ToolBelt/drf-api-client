@@ -62,8 +62,6 @@ kotlin {
     }
 
     jvm {
-        withJava()
-
         compilerOptions {
             jvmTarget = JvmTarget.JVM_11
             freeCompilerArgs.add("-Xjdk-release=11")
