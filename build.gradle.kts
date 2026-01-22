@@ -38,9 +38,6 @@ plugins {
     id("com.gw2tb.maven-publish-conventions")
 }
 
-yarn.lockFileName = "kotlin-yarn.lock"
-yarn.lockFileDirectory = rootDir
-
 java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(24)
