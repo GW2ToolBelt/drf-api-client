@@ -22,7 +22,6 @@ junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", vers
 # org.jetbrains.dokka - Dokka Gradle Plugin
 # https://github.com/Kotlin/dokka
 dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
-dokka-javadoc = { id = "org.jetbrains.dokka-javadoc", version.ref = "dokka" }
 
 # org.jetbrains.kotlinx.binary-compatibility-validator - binary-compatibility-validator
 # https://github.com/Kotlin/binary-compatibility-validator

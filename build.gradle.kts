@@ -32,7 +32,6 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     alias(buildDeps.plugins.binary.compatibility.validator)
     alias(buildDeps.plugins.dokka)
-//    alias(buildDeps.plugins.dokka.javadoc)
     alias(buildDeps.plugins.kotlin.multiplatform)
     alias(buildDeps.plugins.kotlin.plugin.serialization)
     id("com.gw2tb.maven-publish-conventions")
