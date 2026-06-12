@@ -48,8 +48,8 @@ kotlin {
     applyDefaultHierarchyTemplate()
 
     compilerOptions {
-        apiVersion = KotlinVersion.KOTLIN_2_1
-        languageVersion = KotlinVersion.KOTLIN_2_1
+        apiVersion = KotlinVersion.KOTLIN_2_4
+        languageVersion = KotlinVersion.KOTLIN_2_4
     }
 
     js {
