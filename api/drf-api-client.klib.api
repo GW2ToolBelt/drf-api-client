@@ -1,0 +1,119 @@
+// Klib ABI Dump
+// Targets: [androidNativeArm32, androidNativeArm64, androidNativeX64, androidNativeX86, iosArm64, iosSimulatorArm64, iosX64, js, linuxArm64, linuxX64, macosArm64, mingwX64, tvosArm64, tvosSimulatorArm64, wasmJs, watchosArm32, watchosArm64, watchosDeviceArm64, watchosSimulatorArm64]
+// Rendering settings:
+// - Signature version: 2
+// - Show manifest properties: true
+// - Show declarations: true
+
+// Library unique name: <com.gw2tb.drf:drf-api-client>
+sealed interface com.gw2tb.drf.api.model/DrfMessage { // com.gw2tb.drf.api.model/DrfMessage|null[0]
+    final object Companion : kotlinx.serialization.internal/SerializerFactory { // com.gw2tb.drf.api.model/DrfMessage.Companion|null[0]
+        final fun serializer(): kotlinx.serialization/KSerializer<com.gw2tb.drf.api.model/DrfMessage> // com.gw2tb.drf.api.model/DrfMessage.Companion.serializer|serializer(){}[0]
+        final fun serializer(kotlin/Array<out kotlinx.serialization/KSerializer<*>>...): kotlinx.serialization/KSerializer<*> // com.gw2tb.drf.api.model/DrfMessage.Companion.serializer|serializer(kotlin.Array<out|kotlinx.serialization.KSerializer<*>>...){}[0]
+    }
+}
+
+final class com.gw2tb.drf.api.exceptions/SocketClosedException : kotlin/Exception { // com.gw2tb.drf.api.exceptions/SocketClosedException|null[0]
+    final val closeReason // com.gw2tb.drf.api.exceptions/SocketClosedException.closeReason|{}closeReason[0]
+        final fun <get-closeReason>(): io.ktor.websocket/CloseReason? // com.gw2tb.drf.api.exceptions/SocketClosedException.closeReason.<get-closeReason>|<get-closeReason>(){}[0]
+}
+
+final class com.gw2tb.drf.api.model/DataMessage : com.gw2tb.drf.api.model/DrfMessage { // com.gw2tb.drf.api.model/DataMessage|null[0]
+    constructor <init>(kotlin/String, com.gw2tb.drf.api.model/DataMessage.Drop) // com.gw2tb.drf.api.model/DataMessage.<init>|<init>(kotlin.String;com.gw2tb.drf.api.model.DataMessage.Drop){}[0]
+
+    final val character // com.gw2tb.drf.api.model/DataMessage.character|{}character[0]
+        final fun <get-character>(): kotlin/String // com.gw2tb.drf.api.model/DataMessage.character.<get-character>|<get-character>(){}[0]
+    final val drop // com.gw2tb.drf.api.model/DataMessage.drop|{}drop[0]
+        final fun <get-drop>(): com.gw2tb.drf.api.model/DataMessage.Drop // com.gw2tb.drf.api.model/DataMessage.drop.<get-drop>|<get-drop>(){}[0]
+
+    final fun component1(): kotlin/String // com.gw2tb.drf.api.model/DataMessage.component1|component1(){}[0]
+    final fun component2(): com.gw2tb.drf.api.model/DataMessage.Drop // com.gw2tb.drf.api.model/DataMessage.component2|component2(){}[0]
+    final fun copy(kotlin/String = ..., com.gw2tb.drf.api.model/DataMessage.Drop = ...): com.gw2tb.drf.api.model/DataMessage // com.gw2tb.drf.api.model/DataMessage.copy|copy(kotlin.String;com.gw2tb.drf.api.model.DataMessage.Drop){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // com.gw2tb.drf.api.model/DataMessage.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // com.gw2tb.drf.api.model/DataMessage.hashCode|hashCode(){}[0]
+    final fun toString(): kotlin/String // com.gw2tb.drf.api.model/DataMessage.toString|toString(){}[0]
+
+    final class Drop { // com.gw2tb.drf.api.model/DataMessage.Drop|null[0]
+        constructor <init>(kotlin.collections/Map<kotlin/Int, kotlin/Int>, kotlin.collections/Map<kotlin/Int, kotlin/Int>, kotlin/Int, kotlin/String) // com.gw2tb.drf.api.model/DataMessage.Drop.<init>|<init>(kotlin.collections.Map<kotlin.Int,kotlin.Int>;kotlin.collections.Map<kotlin.Int,kotlin.Int>;kotlin.Int;kotlin.String){}[0]
+
+        final val currencies // com.gw2tb.drf.api.model/DataMessage.Drop.currencies|{}currencies[0]
+            final fun <get-currencies>(): kotlin.collections/Map<kotlin/Int, kotlin/Int> // com.gw2tb.drf.api.model/DataMessage.Drop.currencies.<get-currencies>|<get-currencies>(){}[0]
+        final val items // com.gw2tb.drf.api.model/DataMessage.Drop.items|{}items[0]
+            final fun <get-items>(): kotlin.collections/Map<kotlin/Int, kotlin/Int> // com.gw2tb.drf.api.model/DataMessage.Drop.items.<get-items>|<get-items>(){}[0]
+        final val magicFind // com.gw2tb.drf.api.model/DataMessage.Drop.magicFind|{}magicFind[0]
+            final fun <get-magicFind>(): kotlin/Int // com.gw2tb.drf.api.model/DataMessage.Drop.magicFind.<get-magicFind>|<get-magicFind>(){}[0]
+        final val timestamp // com.gw2tb.drf.api.model/DataMessage.Drop.timestamp|{}timestamp[0]
+            final fun <get-timestamp>(): kotlin/String // com.gw2tb.drf.api.model/DataMessage.Drop.timestamp.<get-timestamp>|<get-timestamp>(){}[0]
+
+        final fun component1(): kotlin.collections/Map<kotlin/Int, kotlin/Int> // com.gw2tb.drf.api.model/DataMessage.Drop.component1|component1(){}[0]
+        final fun component2(): kotlin.collections/Map<kotlin/Int, kotlin/Int> // com.gw2tb.drf.api.model/DataMessage.Drop.component2|component2(){}[0]
+        final fun component3(): kotlin/Int // com.gw2tb.drf.api.model/DataMessage.Drop.component3|component3(){}[0]
+        final fun component4(): kotlin/String // com.gw2tb.drf.api.model/DataMessage.Drop.component4|component4(){}[0]
+        final fun copy(kotlin.collections/Map<kotlin/Int, kotlin/Int> = ..., kotlin.collections/Map<kotlin/Int, kotlin/Int> = ..., kotlin/Int = ..., kotlin/String = ...): com.gw2tb.drf.api.model/DataMessage.Drop // com.gw2tb.drf.api.model/DataMessage.Drop.copy|copy(kotlin.collections.Map<kotlin.Int,kotlin.Int>;kotlin.collections.Map<kotlin.Int,kotlin.Int>;kotlin.Int;kotlin.String){}[0]
+        final fun equals(kotlin/Any?): kotlin/Boolean // com.gw2tb.drf.api.model/DataMessage.Drop.equals|equals(kotlin.Any?){}[0]
+        final fun hashCode(): kotlin/Int // com.gw2tb.drf.api.model/DataMessage.Drop.hashCode|hashCode(){}[0]
+        final fun toString(): kotlin/String // com.gw2tb.drf.api.model/DataMessage.Drop.toString|toString(){}[0]
+
+        final object $serializer : kotlinx.serialization.internal/GeneratedSerializer<com.gw2tb.drf.api.model/DataMessage.Drop> { // com.gw2tb.drf.api.model/DataMessage.Drop.$serializer|null[0]
+            final val descriptor // com.gw2tb.drf.api.model/DataMessage.Drop.$serializer.descriptor|{}descriptor[0]
+                final fun <get-descriptor>(): kotlinx.serialization.descriptors/SerialDescriptor // com.gw2tb.drf.api.model/DataMessage.Drop.$serializer.descriptor.<get-descriptor>|<get-descriptor>(){}[0]
+
+            final fun childSerializers(): kotlin/Array<kotlinx.serialization/KSerializer<*>> // com.gw2tb.drf.api.model/DataMessage.Drop.$serializer.childSerializers|childSerializers(){}[0]
+            final fun deserialize(kotlinx.serialization.encoding/Decoder): com.gw2tb.drf.api.model/DataMessage.Drop // com.gw2tb.drf.api.model/DataMessage.Drop.$serializer.deserialize|deserialize(kotlinx.serialization.encoding.Decoder){}[0]
+            final fun serialize(kotlinx.serialization.encoding/Encoder, com.gw2tb.drf.api.model/DataMessage.Drop) // com.gw2tb.drf.api.model/DataMessage.Drop.$serializer.serialize|serialize(kotlinx.serialization.encoding.Encoder;com.gw2tb.drf.api.model.DataMessage.Drop){}[0]
+        }
+
+        final object Companion { // com.gw2tb.drf.api.model/DataMessage.Drop.Companion|null[0]
+            final val $childSerializers // com.gw2tb.drf.api.model/DataMessage.Drop.Companion.$childSerializers|{}$childSerializers[0]
+
+            final fun serializer(): kotlinx.serialization/KSerializer<com.gw2tb.drf.api.model/DataMessage.Drop> // com.gw2tb.drf.api.model/DataMessage.Drop.Companion.serializer|serializer(){}[0]
+        }
+    }
+
+    final object Companion { // com.gw2tb.drf.api.model/DataMessage.Companion|null[0]
+        final fun serializer(): kotlinx.serialization/KSerializer<com.gw2tb.drf.api.model/DataMessage> // com.gw2tb.drf.api.model/DataMessage.Companion.serializer|serializer(){}[0]
+    }
+}
+
+final class com.gw2tb.drf.api.model/SessionUpdateMessage : com.gw2tb.drf.api.model/DrfMessage { // com.gw2tb.drf.api.model/SessionUpdateMessage|null[0]
+    constructor <init>(kotlin/String, kotlin/Int, kotlin/Int, kotlin/String, kotlin/String?) // com.gw2tb.drf.api.model/SessionUpdateMessage.<init>|<init>(kotlin.String;kotlin.Int;kotlin.Int;kotlin.String;kotlin.String?){}[0]
+
+    final val character // com.gw2tb.drf.api.model/SessionUpdateMessage.character|{}character[0]
+        final fun <get-character>(): kotlin/String // com.gw2tb.drf.api.model/SessionUpdateMessage.character.<get-character>|<get-character>(){}[0]
+    final val end // com.gw2tb.drf.api.model/SessionUpdateMessage.end|{}end[0]
+        final fun <get-end>(): kotlin/String? // com.gw2tb.drf.api.model/SessionUpdateMessage.end.<get-end>|<get-end>(){}[0]
+    final val level // com.gw2tb.drf.api.model/SessionUpdateMessage.level|{}level[0]
+        final fun <get-level>(): kotlin/Int // com.gw2tb.drf.api.model/SessionUpdateMessage.level.<get-level>|<get-level>(){}[0]
+    final val map // com.gw2tb.drf.api.model/SessionUpdateMessage.map|{}map[0]
+        final fun <get-map>(): kotlin/Int // com.gw2tb.drf.api.model/SessionUpdateMessage.map.<get-map>|<get-map>(){}[0]
+    final val start // com.gw2tb.drf.api.model/SessionUpdateMessage.start|{}start[0]
+        final fun <get-start>(): kotlin/String // com.gw2tb.drf.api.model/SessionUpdateMessage.start.<get-start>|<get-start>(){}[0]
+
+    final fun component1(): kotlin/String // com.gw2tb.drf.api.model/SessionUpdateMessage.component1|component1(){}[0]
+    final fun component2(): kotlin/Int // com.gw2tb.drf.api.model/SessionUpdateMessage.component2|component2(){}[0]
+    final fun component3(): kotlin/Int // com.gw2tb.drf.api.model/SessionUpdateMessage.component3|component3(){}[0]
+    final fun component4(): kotlin/String // com.gw2tb.drf.api.model/SessionUpdateMessage.component4|component4(){}[0]
+    final fun component5(): kotlin/String? // com.gw2tb.drf.api.model/SessionUpdateMessage.component5|component5(){}[0]
+    final fun copy(kotlin/String = ..., kotlin/Int = ..., kotlin/Int = ..., kotlin/String = ..., kotlin/String? = ...): com.gw2tb.drf.api.model/SessionUpdateMessage // com.gw2tb.drf.api.model/SessionUpdateMessage.copy|copy(kotlin.String;kotlin.Int;kotlin.Int;kotlin.String;kotlin.String?){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // com.gw2tb.drf.api.model/SessionUpdateMessage.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // com.gw2tb.drf.api.model/SessionUpdateMessage.hashCode|hashCode(){}[0]
+    final fun toString(): kotlin/String // com.gw2tb.drf.api.model/SessionUpdateMessage.toString|toString(){}[0]
+
+    final object Companion { // com.gw2tb.drf.api.model/SessionUpdateMessage.Companion|null[0]
+        final fun serializer(): kotlinx.serialization/KSerializer<com.gw2tb.drf.api.model/SessionUpdateMessage> // com.gw2tb.drf.api.model/SessionUpdateMessage.Companion.serializer|serializer(){}[0]
+    }
+}
+
+final class com.gw2tb.drf.api/DrfApiClient : io.ktor.utils.io.core/Closeable { // com.gw2tb.drf.api/DrfApiClient|null[0]
+    constructor <init>(io.ktor.client.engine/HttpClientEngine, kotlin/String = ...) // com.gw2tb.drf.api/DrfApiClient.<init>|<init>(io.ktor.client.engine.HttpClientEngine;kotlin.String){}[0]
+    constructor <init>(kotlin/String = ...) // com.gw2tb.drf.api/DrfApiClient.<init>|<init>(kotlin.String){}[0]
+
+    final fun close() // com.gw2tb.drf.api/DrfApiClient.close|close(){}[0]
+    final fun subscribe(kotlin/String): kotlinx.coroutines.flow/Flow<com.gw2tb.drf.api.model/DrfMessage> // com.gw2tb.drf.api/DrfApiClient.subscribe|subscribe(kotlin.String){}[0]
+}
+
+final object com.gw2tb.drf.api.model/DataMessageSerializer : kotlinx.serialization.json/JsonTransformingSerializer<com.gw2tb.drf.api.model/DataMessage> // com.gw2tb.drf.api.model/DataMessageSerializer|null[0]
+
+final object com.gw2tb.drf.api.model/DrfMessageSerializer : kotlinx.serialization.json/JsonContentPolymorphicSerializer<com.gw2tb.drf.api.model/DrfMessage> // com.gw2tb.drf.api.model/DrfMessageSerializer|null[0]
+
+final object com.gw2tb.drf.api.model/SessionUpdateMessageSerializer : kotlinx.serialization.json/JsonTransformingSerializer<com.gw2tb.drf.api.model/SessionUpdateMessage> // com.gw2tb.drf.api.model/SessionUpdateMessageSerializer|null[0]
