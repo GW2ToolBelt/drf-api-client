@@ -37,6 +37,11 @@ import kotlinx.serialization.json.jsonPrimitive
 @Serializable(with = DrfMessageSerializer::class)
 public sealed interface DrfMessage
 
+/**
+ * A JSON serializer for [DrfMessage].
+ *
+ * @since   0.2.0
+ */
 public object DrfMessageSerializer : JsonContentPolymorphicSerializer<DrfMessage>(DrfMessage::class) {
 
     override fun selectDeserializer(element: JsonElement): DeserializationStrategy<DrfMessage> =

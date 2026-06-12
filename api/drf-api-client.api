@@ -63,6 +63,10 @@ public final class com/gw2tb/drf/api/model/DataMessage$Drop$Companion {
 	public final fun serializer ()Lkotlinx/serialization/KSerializer;
 }
 
+public final class com/gw2tb/drf/api/model/DataMessageSerializer : kotlinx/serialization/json/JsonTransformingSerializer {
+	public static final field INSTANCE Lcom/gw2tb/drf/api/model/DataMessageSerializer;
+}
+
 public abstract interface class com/gw2tb/drf/api/model/DrfMessage {
 	public static final field Companion Lcom/gw2tb/drf/api/model/DrfMessage$Companion;
 }
@@ -97,5 +101,9 @@ public final class com/gw2tb/drf/api/model/SessionUpdateMessage : com/gw2tb/drf/
 
 public final class com/gw2tb/drf/api/model/SessionUpdateMessage$Companion {
 	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class com/gw2tb/drf/api/model/SessionUpdateMessageSerializer : kotlinx/serialization/json/JsonTransformingSerializer {
+	public static final field INSTANCE Lcom/gw2tb/drf/api/model/SessionUpdateMessageSerializer;
 }
 

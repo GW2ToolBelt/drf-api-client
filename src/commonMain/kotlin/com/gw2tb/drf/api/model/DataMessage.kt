@@ -77,7 +77,12 @@ private object DefaultDataMessageSerializer : KSerializer<DataMessage> {
 
 }
 
-private object DataMessageSerializer : JsonTransformingSerializer<DataMessage>(DefaultDataMessageSerializer) {
+/**
+ * A JSON serializer for [DataMessage].
+ *
+ * @since   0.2.0
+ */
+public object DataMessageSerializer : JsonTransformingSerializer<DataMessage>(DefaultDataMessageSerializer) {
 
     override fun transformDeserialize(element: JsonElement): JsonElement =
         element.jsonObject["payload"] ?: error("Could not find 'payload' field in $element")

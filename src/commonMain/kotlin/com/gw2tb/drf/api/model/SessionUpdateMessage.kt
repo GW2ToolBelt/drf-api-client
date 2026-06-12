@@ -63,7 +63,12 @@ private object DefaultSessionUpdateMessageSerializer : KSerializer<SessionUpdate
 
 }
 
-private object SessionUpdateMessageSerializer : JsonTransformingSerializer<SessionUpdateMessage>(DefaultSessionUpdateMessageSerializer) {
+/**
+ * A JSON serializer for [SessionUpdateMessage].
+ *
+ * @since   0.2.0
+ */
+public object SessionUpdateMessageSerializer : JsonTransformingSerializer<SessionUpdateMessage>(DefaultSessionUpdateMessageSerializer) {
 
     override fun transformDeserialize(element: JsonElement): JsonElement =
         element.jsonObject["payload"] ?: error("Could not find 'payload' field in $element")
