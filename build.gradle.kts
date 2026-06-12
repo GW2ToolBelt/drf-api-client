@@ -84,27 +84,23 @@ kotlin {
         }
     }
 
-//    androidNativeArm32()
-//    androidNativeArm64()
-//    androidNativeX64()
-//    androidNativeX86()
+    androidNativeArm32()
+    androidNativeArm64()
+    androidNativeX64()
+    androidNativeX86()
 
     linuxArm64()
     linuxX64()
 
     iosArm64()
+    iosSimulatorArm64()
     iosX64()
 
-    iosSimulatorArm64()
-
     macosArm64()
-    macosX64()
 
     mingwX64()
 
     tvosArm64()
-    tvosX64()
-
     tvosSimulatorArm64()
 
     @OptIn(ExperimentalWasmDsl::class)
@@ -113,13 +109,13 @@ kotlin {
         nodejs()
         d8()
     }
+
+//    @OptIn(ExperimentalWasmDsl::class)
 //    wasmWasi()
 
     watchosArm32()
     watchosArm64()
-    watchosX64()
-
-//    watchosDeviceArm64()
+    watchosDeviceArm64()
     watchosSimulatorArm64()
 
     sourceSets {

@@ -58,17 +58,18 @@ drfApiClient.subscribe(apiToken = "")
 The following [targets](https://kotlinlang.org/docs/multiplatform-dsl-reference.html#targets) are supported by this
 library:
 
-| Target platform                          | Target preset                                                         |
-|------------------------------------------|-----------------------------------------------------------------------|
-| Kotlin/JVM (can also be used on Android) | `jvm`                                                                 |
-| Kotlin/JS                                | `js`                                                                  |
-| Kotlin/Wasm                              | `wasmJs`                                                              |
-| iOS                                      | `iosArm64`, `iosX64`, `iosSimulatorArm64`                             |
-| watchOS                                  | `watchosArm32`, `watchosArm64`, `watchosX64`, `watchosSimulatorArm64` |
-| tvOS                                     | `tvosArm64`, `tvosX64`, `tvosSimulatorArm64`                          |
-| macOS                                    | `macosArm64`, `macosX64`                                              |
-| Linux                                    | `linuxArm64`, `linuxX64`                                              |
-| Windows                                  | `mingwX64`                                                            |
+| Target platform                          | Target preset                                                                      |
+|------------------------------------------|------------------------------------------------------------------------------------|
+| Kotlin/JVM (can also be used on Android) | `jvm`                                                                              |
+| Kotlin/JS                                | `js`                                                                               |
+| Kotlin/Wasm                              | `wasmJs`                                                                           |
+| Android (Native)                         | `androidNativeArm32`, `androidNativeArm64`, `androidNativeX64`, `androidNativeX86` |
+| iOS                                      | `iosArm64`, `iosX64`, `iosSimulatorArm64`                                          |
+| watchOS                                  | `watchosArm32`, `watchosArm64`, `watchosDeviceArm64`, `watchosSimulatorArm64`      |
+| tvOS                                     | `tvosArm64`, `tvosSimulatorArm64`                                                  |
+| macOS                                    | `macosArm64`                                                                       |
+| Linux                                    | `linuxArm64`, `linuxX64`                                                           |
+| Windows                                  | `mingwX64`                                                                         |
 
 
 ## Building from source
