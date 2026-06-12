@@ -236,6 +236,8 @@ jobs:
           password: ${{ secrets.CENTRAL_PORTAL_PASSWORD }}
           bundle: ./artifact-bundle.tgz
           publishing-type: "user-managed"
+    outputs:
+      deployment-id: ${{ steps.upload.outputs.deployment-id }}
 
   ghp-release:
     name: Release Documentation to GitHub Pages
