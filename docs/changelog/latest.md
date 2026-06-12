@@ -1,9 +1,15 @@
-### 0.1.1
+### 0.2.0
 
-_Released 2025 Feb 24_
+_Released 2026 Jun 12_
 
-#### Overview
+#### Added
 
-This release does not contain any change to the DRF API client library itself.
-Instead, it updates the required version of Ktor to `3.1.1` which comes with a
-handful of bug fixes for JS and Wasm targets that affect the DRF API client.
+- Serializers for `DataMessage` and `SessionUpdateMessage` are now public.
+- Updated support Kotlin targets.
+    - Added: `androidNativeArm32`, `androidNativeArm64`, `androidNativeX64`, `androidNativeX86`, `watchosDeviceArm64`
+    - Removed: `macosX64`, `tvosX64`
+
+#### Breaking Changes
+
+- The minimum Kotlin required version is now 2.4.0 (from 2.1.0).
+- Dropped support for `macosX64` and `tvosX64` targets.

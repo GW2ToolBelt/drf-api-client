@@ -1,3 +1,22 @@
+### 0.2.0
+
+_Released 2026 Jun 12_
+
+#### Added
+
+- Serializers for `DataMessage` and `SessionUpdateMessage` are now public.
+- Updated support Kotlin targets.
+    - Added: `androidNativeArm32`, `androidNativeArm64`, `androidNativeX64`, `androidNativeX86`, `watchosDeviceArm64`
+    - Removed: `macosX64`, `tvosX64`
+
+#### Breaking Changes
+
+- The minimum Kotlin required version is now 2.4.0 (from 2.1.0).
+- Dropped support for `macosX64` and `tvosX64` targets.
+
+
+---
+
 ### 0.1.1
 
 _Released 2025 Feb 24_
