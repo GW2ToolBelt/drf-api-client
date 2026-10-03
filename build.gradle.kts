@@ -107,7 +107,7 @@ kotlin {
     wasmJs {
         browser()
         nodejs()
-        d8()
+//        d8()
     }
 
 //    @OptIn(ExperimentalWasmDsl::class)
@@ -138,7 +138,7 @@ kotlin {
             }
         }
 
-        val websocketServerTest by creating {
+        val websocketServerTest = register("websocketServerTest") {
             dependsOn(commonTest.get())
 
             dependencies {
@@ -148,7 +148,7 @@ kotlin {
         }
 
         named("jvmTest") {
-            dependsOn(websocketServerTest)
+            dependsOn(websocketServerTest.get())
         }
     }
 
